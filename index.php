@@ -10,6 +10,7 @@
     <?php
     $pi1 = 3.17899;
     echo "Olá, mundo";
+    echo $pi1;
     ?>
 </body>
 </html>
