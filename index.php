@@ -1,3 +1,21 @@
+<?php
+    if (isset($_POST['enviar-formulario'])):
+        $erros = array();
+        if (!$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)):
+            $erros[] = "ERROR - Este não é um email válido!";
+        endif;
+        if (!$senha = filter_input(INPUT_POST, 'senha', FILTER_VALIDATE_INT)): # teste
+            $erros[] = "ERROR - Este não é uma senha válida!";
+        endif;
+        if(!empty($erros)):
+            foreach($erros as $erro):
+                echo "<li>".$erro."<li>";
+            endforeach;
+        else:
+            echo "Sucesso !!";
+        endif; 
+    endif;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,10 +25,13 @@
     <title>Validação de login</title>
 </head>
 <body>
-    <?php
-    $pi1 = 3.17899;
-    echo "Olá, mundo";
-    echo $pi1;
-    ?>
+    <h1>Login</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+        Email : <input type="text" name="email">
+        <br>
+        Senha : <input type="password" name="senha">
+        <br>
+        <button type="submit" name="btn-entrar">Enviar</button>
+    </form>
 </body>
 </html>
