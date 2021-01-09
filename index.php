@@ -4,14 +4,14 @@
         $senha = $_POST['senha'];
 
         if ((empty($login)) and (empty($senha)))
-            echo "Os campos login/senha estão vazios";
+            echo "Os campos email/senha estão vazios";
         elseif (empty($senha))
             echo "O campo senha está vazio";
         elseif (empty($login))
-            echo "O campo login está vazio!";
+            echo "O campo email está vazio!";
         else
             if (($login != "Andreluan176@gmail.com") and ($login != "andreluan176@gmail.com"))
-                echo "ERROR - Login errado!";
+                echo "ERROR - Email errado!";
             elseif ($senha != "andre12345")
                 echo "ERROR - Senha errada!";
             else
