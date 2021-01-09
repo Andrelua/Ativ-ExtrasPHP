@@ -25,13 +25,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="softex-icon.ico" type="image/x-icon">
     <title>Validação de login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Login</h1>
+    <header class="cabecalho">
+        <h1 class="logo">
+            <a href="index.php" title="Login">Login</a>
+        </h1>
+    </header>
+    
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-        Email : <input type="text" name="email">
+        Email : <input type="text" name="email" placeholder="Email aqui...">
         <br>
-        Senha : <input type="password" name="senha">
+        Senha : <input type="password" name="senha" placeholder="Senha aqui...">
         <br>
         <button type="submit" name="btn-entrar">Enviar</button>
     </form>
