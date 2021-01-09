@@ -1,20 +1,22 @@
 <?php
-    if (isset($_POST['enviar-formulario'])):
-        $erros = array();
-        if (!$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)):
-            $erros[] = "ERROR - Este não é um email válido!";
-        endif;
-        if (!$senha = filter_input(INPUT_POST, 'senha', FILTER_VALIDATE_INT)): # teste
-            $erros[] = "ERROR - Este não é uma senha válida!";
-        endif;
-        if(!empty($erros)):
-            foreach($erros as $erro):
-                echo "<li>".$erro."<li>";
-            endforeach;
-        else:
-            echo "Sucesso !!";
-        endif; 
-    endif;
+    if (isset($_POST['btn-entrar'])):
+        $login = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        if ((empty($login)) and (empty($senha)))
+            echo "Os campos login/senha estão vazios";
+        elseif (empty($senha))
+            echo "O campo senha está vazio";
+        elseif (empty($login))
+            echo "O campo login está vazio!";
+        else
+            if (($login != "Andreluan176@gmail.com") and ($login != "andreluan176@gmail.com"))
+                echo "ERROR - Login errado!";
+            elseif ($senha != "andre12345")
+                echo "ERROR - Senha errada!";
+            else
+                echo "SUCESSO!!";
+            endif;     
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
