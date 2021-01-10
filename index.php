@@ -33,7 +33,7 @@
 <body>
     <header class="cabecalho">
         <h1 class="logo">
-            <a href="index.php" title="Login">Login</a>
+            <a href="index.php" title="Sistema de Login">Login</a>
         </h1>
     </header>
     
